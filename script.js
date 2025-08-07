@@ -40,7 +40,7 @@ async function searchCity() {
       <p><strong>Country: </strong>${overviewData[0].country}</p>`;
   } catch (err1) {
     console.error("Fetch error:", err1);
-    document.querySelector("#cityInfo").innerText = "Not state overview";
+    document.querySelector("#cityInfo").innerText = "Failed to load";
   }
 
   //newsData api
