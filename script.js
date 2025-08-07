@@ -12,10 +12,10 @@ let tileLayer; // To update tile layer dynamically if needed
 async function searchCity() {
   const city = document.querySelector("#cityInput").value.trim().toLowerCase();
   if (!city) return;
-
-  // const overviewUrl = `https://api.api-ninjas.com/v1/city?name=${encodeURIComponent(
-  //   city
-  // )}`;
+  //city overview api ninjas
+  const overviewUrl = `https://api.api-ninjas.com/v1/city?name=${encodeURIComponent(
+    city
+  )}`;
 
   const option1 = {
     method: "GET",
@@ -45,9 +45,9 @@ async function searchCity() {
 
   //newsData api
 
-  // const newsUrl = `https://newsdata.io/api/1/news?apikey=pub_d90847c4b59b4ad8ba8d25a281dcdc22&country=in&q=${encodeURIComponent(
-  //   city
-  // )}`;
+  const newsUrl = `https://newsdata.io/api/1/news?apikey=pub_d90847c4b59b4ad8ba8d25a281dcdc22&country=in&q=${encodeURIComponent(
+    city
+  )}`;
 
   try {
     const news = await fetch(newsUrl);
@@ -79,7 +79,7 @@ async function searchCity() {
 
   //weathermap api
   // const weatherKey = "1f52e05f5ea4e5b96eb5e18512680721";
-  // const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1f52e05f5ea4e5b96eb5e18512680721&units=metric`;
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1f52e05f5ea4e5b96eb5e18512680721&units=metric`;
   let lat;
   let lon;
   let country;
@@ -146,7 +146,7 @@ async function searchCity() {
 
   //WAQI api pollution detail
 
-  // const airUrl = `https://api.waqi.info/feed/${city}/?token=0a7a811014a4fc3465dace71c6bd5ab05349f47d`;
+  const airUrl = `https://api.waqi.info/feed/${city}/?token=0a7a811014a4fc3465dace71c6bd5ab05349f47d`;
   try {
     const airRes = await fetch(airUrl);
 
@@ -298,9 +298,9 @@ async function searchCity() {
 
   // map api
 
-  // const mapurl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-  //   city
-  // )}`;
+  const mapurl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+    city
+  )}`;
   try {
     const mapres = await fetch(mapurl);
     const mapdata = await mapres.json();
@@ -358,7 +358,7 @@ async function checkCity() {
   }
   // rapid fuel api
   // Call Fuel API (state-wise)
-  // const fuelsUrl = `https://daily-petrol-diesel-lpg-cng-fuel-prices-in-india.p.rapidapi.com/v1/fuel-prices/today/india/${matchedState}`;
+  const fuelsUrl = `https://daily-petrol-diesel-lpg-cng-fuel-prices-in-india.p.rapidapi.com/v1/fuel-prices/today/india/${matchedState}`;
   const option2 = {
     method: "GET",
     headers: {
