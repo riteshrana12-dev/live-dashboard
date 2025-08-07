@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0077ff" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+    <title>Live dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="img">
+        <img class="logo" src="./logo.png" alt="logo" srcset="" />
+      </div>
+      <div id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+        <div class="bookmark">
+          <a class="anchor" href="#city">City Overview</a>
+          <a class="anchor" href="#news">Top News</a>
+          <a class="anchor" href="#Weather">Weather Details</a>
+          <a class="anchor" href="#P_and_A">Pollution & Air Quality</a>
+          <a class="anchor" href="#fuel">Fuel Prices</a>
+          <a class="anchor" href="#Location">Map Location</a>
+          <a class="anchor" href="#note">Sticky Notes</a>
+          <a class="anchor" href="#ads">Ads</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="search-container" id="city">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city or state name..."
+      />
+      <button id="search">Search</button>
+    </div>
+
+    <div class="dashboard">
+      <div class="card">
+        <h2>City Overview</h2>
+        <p id="cityInfo">Loading...</p>
+      </div>
+
+      <div class="card" id="News">
+        <h2>Top News</h2>
+        <div class="card-content">
+          <p id="newsData">Loading...</p>
+        </div>
+      </div>
+
+      <div class="card" id="Weather">
+        <h2>Weather Details</h2>
+        <p id="weatherData"></p>
+      </div>
+
+      <div class="card" id="P_and_A">
+        <h2>Pollution & Air Quality</h2>
+        <div class="card-content" id="Pollution_data">
+          <p id="fail"></p>
+          <p id="pm10"></p>
+
+          <canvas id="myChart10" height="50" width="50"></canvas>
+
+          <p id="pm25"></p>
+
+          <canvas id="myChart25" height="550" width="550"></canvas>
+          <p id="aqi"></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Fuel Prices</h2>
+        <p id="fuelData">Loading...</p>
+      </div>
+
+      <div class="card" id="Location">
+        <h2>Map Location</h2>
+        <div id="map" style="height: 400px; width: 100%"></div>
+      </div>
+    </div>
+    <div class="ad-section" id="ads">
+      <h2>Ads</h2>
+      <p>Explore amazing offers and services tailored just for your city!</p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="state_city.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
